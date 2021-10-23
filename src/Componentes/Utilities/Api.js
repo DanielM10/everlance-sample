@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from "react-dom";
+import { Link } from "react-router-dom";
+import axios from 'axios';
+
 const apiurl='https://www.metaweather.com/api/location/';
 /*uTILERIAS GENERALES PARA CONTROLDE APIS DE DANIEL V2*/
 
@@ -16,24 +21,23 @@ function api_JsonToUrl(obj){
 }
 
 /* General Consumo API */
-
+export function api_handleErrors(response) {
+	
+    if (!response.ok) {
+		
+    	throw response; 
+    }
+    return response;
+}
 
 export function busquedadedatos(querystring){
-	return fetch(apiurl+'search/?query='+querystring, {
-		method: 'GET',
-		headers:{
-			
-			'Content-Type': 'application/json',
-					
-		}
-	})		
+	axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+	return axios.get('https://www.metaweather.com/api/location/'+'search/?query='+querystring
+	)
+	
 }
+
 export function busquedadedatosdeatil(data){
-	return fetch(apiurl+data+'/', {
-		method: 'GET',
-		headers:{			
-			'Content-Type': 'application/json',
-				
-		}
-	})	
+axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
+return axios.get('https://www.metaweather.com/api/location/'+data)
 }

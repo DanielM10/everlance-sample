@@ -34,3 +34,15 @@ body {
   .centered-we{
     text-align: center !important;
   }
+  .centered-we-V2{
+    text-align: center !important;
+  }
+  .centeredspin{
+    text-align: center !important;
+    color: black !important;
+  }
+  .Celsius{
+      font-size: 250%;
+      font-weight: 20% !important;
+    color: black !important;
+  }

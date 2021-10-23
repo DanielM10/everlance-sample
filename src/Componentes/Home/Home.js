@@ -114,7 +114,7 @@ export default class Home extends React.Component {
     <Row gutter={16}>
       <Col span={12}>
         <Card bordered={false}>
-           <h3 className="Celsius"> {this.state.Celsius} ° C </h3>
+           <h3 className="Celsius"> {Math.round(this.state.Celsius)} ° C </h3>
         </Card>
       </Col>
       <Col span={12}>

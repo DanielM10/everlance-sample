@@ -32,12 +32,12 @@ export function api_handleErrors(response) {
 
 export function busquedadedatos(querystring){
 	axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
-	return axios.get('https://www.metaweather.com/api/location/'+'search/?query='+querystring
+	return axios.get('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/'+'search/?query='+querystring
 	)
 	
 }
 
 export function busquedadedatosdeatil(data){
 axios.defaults.headers.post['Content-Type'] ='application/x-www-form-urlencoded';
-return axios.get('https://www.metaweather.com/api/location/'+data)
+return axios.get('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/'+data)
 }
